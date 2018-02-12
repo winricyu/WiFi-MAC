@@ -10,7 +10,7 @@ import fun.dooit.wifi_mac.util.net.NetworkInfo;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView mTextView;
+    private TextView mTextMac1, mTextMac2;
     private Button mBtnGetMac;
 
     @Override
@@ -19,13 +19,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         mBtnGetMac = (Button) findViewById(R.id.btn_getMac);
-        mTextView = (TextView) findViewById(R.id.textView2);
+        mTextMac1 = (TextView) findViewById(R.id.text_mac_1);
+        mTextMac2 = (TextView) findViewById(R.id.text_mac_2);
         mBtnGetMac.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        String mac = NetworkInfo.getMacAddress(this);
-        mTextView.setText(mac);
+        mTextMac1.setText("");
+        mTextMac2.setText("");
+        mTextMac1.setText(NetworkInfo.getMacAddressForSdk23(this));
+        mTextMac2.setText(NetworkInfo.getMacAddressForSdk21(this));
     }
 }
