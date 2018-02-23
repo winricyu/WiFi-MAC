@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WiFi-MAC</string>
+    <string name="wifi_connected">WiFi已開啟</string>
+    <string name="wifi_disconnected">WiFi已關閉</string>
+    <string name="mobile_connected">行動網路已開啟</string>
+    <string name="mobile_disconnected">行動網路已關閉</string>
 </resources>
